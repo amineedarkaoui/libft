@@ -1,0 +1,50 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/26 10:21:02 by aedarkao          #+#    #+#             */
+/*   Updated: 2024/10/26 13:39:37 by aedarkao         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_atoi(const char *nptr)
+{
+	int	i;
+	int	result;
+	int	sign;
+
+	i = 0;
+	result = 0;
+	sign = 1;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (ft_isdigit(nptr[i]))
+	{
+		result *= 10;
+		result += nptr[i] - '0';
+		i++;
+	}
+	return (sign * result);
+}
+
+// int main()
+// {
+// 	printf("%d\n", ft_atoi("-2147483648"));
+// 	printf("%d\n", ft_atoi("  \t\n\r\v\f   +40"));
+// 	printf("%d\n", ft_atoi(" "));
+// 	printf("%d\n", atoi("77hello worlzu"));
+// 	printf("%d\n", ft_atoi("."));
+// 	printf("%d\n", ft_atoi("p"));
+// 	return (0);
+// }
