@@ -6,7 +6,7 @@
 /*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 17:22:54 by aedarkao          #+#    #+#             */
-/*   Updated: 2024/11/01 16:44:31 by aedarkao         ###   ########.fr       */
+/*   Updated: 2024/11/01 21:32:02 by aedarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i++;
 	while (len > 0 && is_set(s1[len - 1], set))
 		len--;
+	if (i >= len)
+		return ("");
 	result = malloc(len - i + 1);
 	if (result == 0)
 		return (0);
 	j = 0;
 	while (i < len)
 	{
-		result[j] = s1[i];
-		i++;
-		j++;
+		result[j++] = s1[i++];
 	}
 	result[j] = 0;
 	return (result);
@@ -57,6 +57,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int main()
 // {
-// 	printf("%s\n", ft_strtrim("dhhhhhhhllllee", "hdle"));
+// 	printf("%s\n", ft_strtrim("dhhhhhsgsdshshfweghhllllee", ""));
 // 	return (0);
 // }
