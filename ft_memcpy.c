@@ -6,7 +6,7 @@
 /*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:03:29 by aedarkao          #+#    #+#             */
-/*   Updated: 2024/10/27 15:21:50 by aedarkao         ###   ########.fr       */
+/*   Updated: 2024/11/01 15:44:58 by aedarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (dest == src || n == 0)
+		return (dest);
 	i = 0;
 	while (i < n)
 	{

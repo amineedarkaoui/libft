@@ -6,7 +6,7 @@
 /*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 10:21:02 by aedarkao          #+#    #+#             */
-/*   Updated: 2024/10/26 13:39:37 by aedarkao         ###   ########.fr       */
+/*   Updated: 2024/11/01 16:03:37 by aedarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int	ft_atoi(const char *nptr)
 
 // int main()
 // {
-// 	printf("%d\n", ft_atoi("-2147483648"));
+// 	printf("%d\n", ft_atoi("2147483647"));
+// 	printf("%d\n", atoi("2147483647"));
 // 	printf("%d\n", ft_atoi("  \t\n\r\v\f   +40"));
 // 	printf("%d\n", ft_atoi(" "));
 // 	printf("%d\n", atoi("77hello worlzu"));

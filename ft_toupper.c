@@ -6,7 +6,7 @@
 /*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:14:42 by aedarkao          #+#    #+#             */
-/*   Updated: 2024/10/26 13:58:54 by aedarkao         ###   ########.fr       */
+/*   Updated: 2024/11/01 10:43:56 by aedarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - ('a' - 'A'));
-	else
-		return (c);
+	return (c);
 }
 
 // int main()

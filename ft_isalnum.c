@@ -6,7 +6,7 @@
 /*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 09:43:28 by aedarkao          #+#    #+#             */
-/*   Updated: 2024/10/26 13:57:42 by aedarkao         ###   ########.fr       */
+/*   Updated: 2024/11/01 10:10:49 by aedarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	int	c1;
-	int	c2;
-	int	c3;
-
-	c1 = (c >= 'a' && c <= 'z');
-	c2 = (c >= 'A' && c <= 'Z');
-	c3 = (c >= '0' && c <= '9');
-	return (c1 || c2 || c3);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
 
 // int main()

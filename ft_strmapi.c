@@ -6,7 +6,7 @@
 /*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 09:15:28 by aedarkao          #+#    #+#             */
-/*   Updated: 2024/10/27 10:25:40 by aedarkao         ###   ########.fr       */
+/*   Updated: 2024/11/01 17:18:46 by aedarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*result;
 
+	if (!s || !f)
+		return (0);
 	len = ft_strlen(s);
 	result = malloc(len + 1);
 	if (!result)

@@ -6,7 +6,7 @@
 /*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 07:57:21 by aedarkao          #+#    #+#             */
-/*   Updated: 2024/10/26 13:58:43 by aedarkao         ###   ########.fr       */
+/*   Updated: 2024/11/01 15:48:53 by aedarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 	size_t	llen;
 
-	llen = 0;
-	while (little[llen])
-		llen++;
+	llen = ft_strlen(little);
 	if (llen == 0)
 		return ((char *)big);
 	i = 0;

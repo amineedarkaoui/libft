@@ -6,7 +6,7 @@
 /*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 07:51:49 by aedarkao          #+#    #+#             */
-/*   Updated: 2024/10/27 09:11:44 by aedarkao         ###   ########.fr       */
+/*   Updated: 2024/11/01 17:16:45 by aedarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ char	*ft_itoa(int n)
 
 // int main()
 // {
-// 	printf("%s\n", ft_itoa(0));
+// 	printf("%s\n", ft_itoa(512));
 // 	return (0);
 // }

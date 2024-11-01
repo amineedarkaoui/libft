@@ -6,7 +6,7 @@
 /*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:57:21 by aedarkao          #+#    #+#             */
-/*   Updated: 2024/10/26 17:07:08 by aedarkao         ###   ########.fr       */
+/*   Updated: 2024/11/01 16:30:05 by aedarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	l1;
 	size_t	l2;
 
+	if (!s1 || !s2)
+		return (0);
 	l1 = ft_strlen(s1);
 	l2 = ft_strlen(s2);
 	result = malloc(l1 + l2 + 1);

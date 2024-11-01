@@ -6,7 +6,7 @@
 /*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 18:07:05 by aedarkao          #+#    #+#             */
-/*   Updated: 2024/10/27 10:33:55 by aedarkao         ###   ########.fr       */
+/*   Updated: 2024/11/01 17:37:30 by aedarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,21 @@ static size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-static void	cpy_strs(char const *s, char c, char **result)
+static int	free_list(char **result, unsigned int count)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(result[i]);
+		i++;
+	}
+	free(result);
+	return (0);
+}
+
+static int	cpy_strs(char const *s, char c, char **result)
 {
 	size_t			i;
 	size_t			j;
@@ -52,13 +66,15 @@ static void	cpy_strs(char const *s, char c, char **result)
 		if (j > 0)
 		{
 			result[count] = ft_substr(s, i, j);
+			if (!result[count])
+				return (free_list(result, count));
 			count++;
 			i += j;
 		}
 		if (s[i])
 			i++;
 	}
-	result[count] = 0;
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -66,17 +82,21 @@ char	**ft_split(char const *s, char c)
 	size_t	len;
 	char	**result;
 
+	if (!s)
+		return (0);
 	len = count_words(s, c);
 	result = malloc((len + 1) * sizeof(char *));
 	if (result == 0)
 		return (0);
-	cpy_strs(s, c, result);
+	if (!cpy_strs(s, c, result))
+		return (0);
+	result[len] = 0;
 	return (result);
 }
 
 // int main()
 // {
-// 	char **strs = ft_split("a   d hello world     hey   d     adddddd", ' ');
+// 	char **strs = ft_split("   hgah  dsfg g agsdh  ", ' ');
 // 	int i = 0;
 // 	while (strs[i])
 // 	{
