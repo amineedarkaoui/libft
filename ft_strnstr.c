@@ -6,13 +6,12 @@
 /*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 07:57:21 by aedarkao          #+#    #+#             */
-/*   Updated: 2024/11/01 15:48:53 by aedarkao         ###   ########.fr       */
+/*   Updated: 2024/11/02 10:28:20 by aedarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// segfaults on undefined behavior
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;

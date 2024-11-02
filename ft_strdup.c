@@ -6,7 +6,7 @@
 /*   By: aedarkao <aedarkao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:35:30 by aedarkao          #+#    #+#             */
-/*   Updated: 2024/10/26 14:52:28 by aedarkao         ###   ########.fr       */
+/*   Updated: 2024/11/02 10:19:13 by aedarkao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s)
 	if (result == 0)
 		return (0);
 	i = 0;
-	while (i < ft_strlen(s))
+	while (s[i])
 	{
 		result[i] = s[i];
 		i++;
@@ -32,6 +32,6 @@ char	*ft_strdup(const char *s)
 
 // int main()
 // {
-// 	printf("%s\n", ft_strdup("hello world"));
+// 	printf("%s\n", ft_strdup("Hello world"));
 // 	return (0);
 // }
