@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	i;
 
 	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
 	while (i < size - 1 && src[i])
 	{
 		dest[i] = src[i];
@@ -34,8 +36,10 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 
 // int main()
 // {
-// 	char dest[10] = "hello";
-// 	char src[] = "hel";
-// 	test_strlcpy(dest, src, 10);
+// 	char src[] = "coucou";
+//     char dest[10];
+// 	memset(dest, 'A', 10);
+// 	printf("%s\n", dest);
+//     printf("%d, %s\n", ft_strlcpy(dest, src, 0), dest);
 // 	return (0);
 // }

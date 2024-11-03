@@ -19,7 +19,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (lst && new)
 	{
 		last = ft_lstlast(*lst);
-		new->next = 0;
 		if (last)
 			last->next = new;
 		else

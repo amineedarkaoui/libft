@@ -39,10 +39,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (s1[i] && is_set(s1[i], set))
 		i++;
+	if (i == len)
+		return (ft_strdup(""));
 	while (len > 0 && is_set(s1[len - 1], set))
 		len--;
-	if (i >= len)
-		return ("");
 	result = malloc(len - i + 1);
 	if (result == 0)
 		return (0);

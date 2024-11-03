@@ -21,23 +21,17 @@ char	*ft_strrchr(const char *s, int c)
 	pointer = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if ((unsigned char)s[i] == (unsigned char)c)
 			pointer = ((char *)(s + i));
 		i++;
 	}
-	if (c == 0)
+	if ((unsigned char)c == 0)
 		return ((char *)(s + i));
 	return (pointer);
 }
 
 // int main()
 // {
-// 	printf("%s\n", ft_strrchr("cc", '\0'));
-// 	printf("%s\n", ft_strrchr("7", 'e'));
-// 	printf("%s\n", ft_strrchr("40", 'e'));
-// 	printf("%s\n", ft_strrchr(" ", 'e'));
-// 	printf("%s\n", ft_strrchr("hello woerls", 'e'));
-// 	printf("%s\n", ft_strrchr(".", 'e'));
-// 	printf("%s\n", ft_strrchr("p", 'e'));
+// 	printf("%p\n", ft_strrchr("test", '\0'));
 // 	return (0);
 // }

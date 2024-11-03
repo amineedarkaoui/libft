@@ -12,6 +12,28 @@
 
 #include "libft.h"
 
+static size_t	get_size(int n)
+{
+	size_t	len;
+
+	len = 0;
+	if (n == -2147483648)
+		return (11);
+	if (n < 0)
+	{
+		len++;
+		n *= -1;
+	}
+	if (n == 0)
+		len++;
+	while (n > 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
+}
+
 static void	parse_num(int n, char *result, size_t *i)
 {
 	if (n < 10)
@@ -30,10 +52,12 @@ char	*ft_itoa(int n)
 	char	*result;
 	size_t	i;
 
-	result = malloc(12);
+	result = malloc(get_size(n) + 1);
+	if (!result)
+		return (0);
 	if (n == -2147483648)
 	{
-		result = "-2147483648";
+		ft_memcpy(result, "-2147483648", 12);
 		return (result);
 	}
 	i = 0;
@@ -50,6 +74,6 @@ char	*ft_itoa(int n)
 
 // int main()
 // {
-// 	printf("%s\n", ft_itoa(512));
+// 	printf("%zu\n", get_size(-2147483648));
 // 	return (0);
 // }

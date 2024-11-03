@@ -22,12 +22,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	if (llen == 0)
 		return ((char *)big);
 	i = 0;
-	while (big[i])
+	while (big[i] && i < len)
 	{
 		j = 0;
-		while (little[j] && little[j] == big[i + j] && j < len)
+		while (i + j < len && big[i + j] == little[j] && big[i + j])
 			j++;
-		if (j == len || j == llen)
+		if (j == llen)
 			return ((char *)(big + i));
 		i++;
 	}
@@ -36,12 +36,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 // int main()
 // {
-// 	printf("%s\n", ft_strnstr("a", 0, 100));
-// 	printf("%s\n", ft_strnstr("weldz hello !", "helrld" , 34));
-// 	printf("%s\n", ft_strnstr("40", "e", 0));
-// 	printf("%s\n", ft_strnstr(" ", "e", 1));
-// 	printf("%s\n", ft_strnstr("", "e", 20));
-// 	printf("%s\n", ft_strnstr(".", "e", -1));
-// 	printf("%s\n", ft_strnstr("p", "e", 2));
+// 	printf("%p\n", ft_strnstr("aaxx", "xxs", 5));
+// 	printf("%s\n", ft_strnstr("aaxx", "xx", 6));
+// 	printf("%s\n", ft_strnstr("abc", "abc", 7));
 // 	return (0);
 // }
