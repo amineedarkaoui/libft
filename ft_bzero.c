@@ -25,8 +25,9 @@ void	ft_bzero(void *s, size_t n)
 }
 
 // int	main() {
-// 	int a = 500;
-// 	bzero(&a, 1);
-// 	printf("%d\n", a);
+// 	char *mem = malloc(5);
+// 	memset(mem, 'e', 5);
+//     ft_bzero(mem, 0);
+// 	printf("%d\n", ft_strncmp(mem, "eeeee", 5));
 // 	return (0);
 // }
